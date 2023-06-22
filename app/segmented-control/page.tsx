@@ -8,6 +8,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   SelectChangeEvent,
+  Typography,
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
@@ -36,6 +37,12 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
+      <Typography
+        variant="h2"
+        sx={{ fontSize: 20, textAlign: "center", marginBottom: 3 }}
+      >
+        This UI changes depending on the screen size
+      </Typography>
       {isMobile && (
         <FormControl fullWidth>
           <Select
