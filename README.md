@@ -1,34 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-end Challenges
 
-## Getting Started
+This application showcases solutions to Front-end Challenges from
+FrontendMentor.io and frontloops.io
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Screenshot
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<img src="screenshot.png" alt="screenshot" width="375"/>
 
-## Learn More
+### Links
 
-To learn more about Next.js, take a look at the following resources:
+- Solution URL: https://github.com/delaguilaluis/frontend-challenges
+- Live Site URL: https://delaguilaluis.github.io/frontend-challenges
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## My process
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Built with
 
-## Deploy on Vercel
+- Semantic HTML5 markup
+- CSS custom properties
+- Mobile-first workflow
+- TypeScript
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [Material UI](https://mui.com/) - Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### What I learned
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To have a proer guidance on how to do things the best way while using both
+Next.js and Material UI, I based my project on [this example](https://github.com/mui/material-ui/tree/master/examples/material-next-ts). From which I learned:
+
+- The basic structure of a Next.js project
+- They way Next.js allows to customize meta tags in the page head
+- How to define a global stylesheet for Next.js projects
+- How to customize MUI themes
+- How to define custom styles for MUI components with the `sx` property
+- How to deploy a static Next.js app
+- How to set up favicons in Next.js
+
+### Continued development
+
+- Areas that I want to continue be focusing on in future projects:
+  - Theme customization to ease heavy changes in larger codebases
+- Seems like this template still uses `_app` and `_document` (see
+  [how to migrate](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#migrating-_documentjs-and-_appjs))
+
+### Useful resources
+
+- [Deploying Next.js to GitHub Pages](https://github.com/vercel/next.js/blob/canary/examples/github-pages)
+- [Deploying static Next.js sites](https://nextjs.org/docs/app/building-your-application/deploying/static-exports)
+
+## Author
+
+- Website - [Luis Del Águila](https://delaguilaluis.com)
+- Frontend Mentor - [@delaguilaluis](https://www.frontendmentor.io/profile/delaguilaluis)
+- Mastodon - [@delaguilaluis](https://hachyderm.io/@delaguilaluis)
