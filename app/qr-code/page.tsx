@@ -16,8 +16,7 @@ export default function Page() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        // TODO: how can we better calculate this?
-        height: "93vh",
+        height: "100%",
       }}
       maxWidth="lg"
     >
