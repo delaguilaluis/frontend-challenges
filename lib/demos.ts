@@ -29,6 +29,12 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           "Renders a different selection component based on screen size",
       },
+      {
+        name: "Quick Change Tab",
+        slug: "quick-change-tab",
+        description:
+          "Tab component that can also change its index via a Text Input",
+      },
     ],
   },
 ];

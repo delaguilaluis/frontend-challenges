@@ -4,7 +4,7 @@ import { useSpring, animated } from "@react-spring/web";
 export default function AnimatedAvatar(
   props: AvatarProps & { isBig: boolean; isPopping: boolean }
 ) {
-  const { isBig, isPopping, ...rest } = props;
+  const { isBig, isPopping, ...other } = props;
 
   const style = useSpring({
     from: {
@@ -19,7 +19,7 @@ export default function AnimatedAvatar(
 
   return (
     <animated.div style={style}>
-      <Avatar {...rest} />
+      <Avatar {...other} />
     </animated.div>
   );
 }
