@@ -20,7 +20,7 @@ export default function RootLayout({
       <body>
         <GlobalNav />
         <main className="bg-blue-100 h-screen">
-          <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:py-8 lg:px-8 lg:pl-72 h-full">
+          <div className="mx-auto max-w-4xl space-y-8 px-2 lg:py-8 lg:px-8 lg:pl-72 h-full">
             {children}
           </div>
         </main>
