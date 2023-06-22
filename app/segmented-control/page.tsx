@@ -32,7 +32,7 @@ export default function Page() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "100%",
       }}
       maxWidth="lg"
     >
