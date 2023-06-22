@@ -5,6 +5,7 @@ const nextConfig = {
     appDir: true,
   },
   output: "export",
+  basePath: "/frontend-challenges",
 };
 
 module.exports = nextConfig;
