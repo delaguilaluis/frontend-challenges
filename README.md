@@ -46,8 +46,9 @@ I based my project on [this example](https://github.com/vercel/app-playground/).
 - MUI uses `createContext`, which only works in Next.js
   [Client Components](https://nextjs.org/docs/messages/context-in-server-component)
 - Improve my understanding of React's useState and useEffect, the rendering
-  lifecycle and its interaction when using timers.
-- Usage of react-spring (and how amazing it is!).
+  lifecycle and its interaction when using timers
+- Usage of react-spring (and how amazing it is!)
+- Input elements with patterns do not avoid faulty inputs, they just signal them
 - How to deploy a static Next.js app
 - How to set up favicons in Next.js
 

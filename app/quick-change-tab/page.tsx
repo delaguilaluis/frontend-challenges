@@ -16,14 +16,13 @@ import TabPanel from "@/components/TabPanel";
 
 export default function Page() {
   const [selection, setSelection] = useState(0);
-  const [textInput, setTextInput] = useState("");
+  const [input, setInput] = useState(0);
 
   function handleCick() {
-    const input = Number.parseInt(textInput, 0);
-    if (Number.isNaN(input) || input < 1 || input > 3) {
-      alert("Index is invalid");
-    } else {
+    if (input > 0 && input < 4) {
       setSelection(input - 1);
+    } else {
+      alert("Index is invalid");
     }
   }
 
@@ -47,8 +46,11 @@ export default function Page() {
                 label="Enter tab index"
                 variant="standard"
                 inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-                onChange={(e) => setTextInput(e.target.value)}
-                value={textInput}
+                onChange={(e) =>
+                  setInput(Number.parseInt(e.target.value, 0) || 0)
+                }
+                // Show empty string on initial state
+                value={input === 0 ? "" : input}
               />
             </Grid>
             <Grid item container xs={5} alignItems="center">
