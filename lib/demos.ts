@@ -35,6 +35,12 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           "Tab component that can also change its index via a Text Input",
       },
+      {
+        name: "Toggles",
+        slug: "toggles",
+        description:
+          "Whenever a switch is toggled, all other switches are randomly toggled",
+      },
     ],
   },
 ];
