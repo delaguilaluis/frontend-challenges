@@ -10,9 +10,7 @@
 
 # next.js
 /.next/
-
-# Including out folder so that we can deploy to gh-pages
-# /out/
+/out/
 
 # production
 /build
