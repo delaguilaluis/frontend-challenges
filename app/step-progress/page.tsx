@@ -128,6 +128,7 @@ export default function Page() {
               }
             >
               <Button
+                sx={{ mr: 1 }}
                 variant="contained"
                 hidden={!backButtonDescriptions[step]}
                 onClick={() => handleChange(step - 1)}
