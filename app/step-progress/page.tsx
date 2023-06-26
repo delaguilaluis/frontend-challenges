@@ -128,9 +128,12 @@ export default function Page() {
               }
             >
               <Button
-                sx={{ mr: 1 }}
+                sx={{
+                  mr: 1,
+                  // Using hidden prop collided with inline CSS
+                  display: backButtonDescriptions[step] ? "unset" : "none",
+                }}
                 variant="contained"
-                hidden={!backButtonDescriptions[step]}
                 onClick={() => handleChange(step - 1)}
               >
                 {backButtonDescriptions[step]}
