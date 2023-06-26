@@ -41,6 +41,11 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           "Whenever a switch is toggled, all other switches are randomly toggled",
       },
+      {
+        name: "Step Progress",
+        slug: "step-progress",
+        description: "Data submission with progress steps",
+      },
     ],
   },
 ];
