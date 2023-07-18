@@ -46,6 +46,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "step-progress",
         description: "Data submission with progress steps",
       },
+      {
+        name: "Typing Animation",
+        slug: "typing-animation",
+        description: "Text that simulates auto-typing",
+      },
     ],
   },
 ];
