@@ -51,6 +51,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "typing-animation",
         description: "Text that simulates auto-typing",
       },
+      {
+        name: "Magic Square",
+        slug: "magic-square",
+        description: 'Square that rotates "in 3D" based on the mouse cursor',
+      },
     ],
   },
 ];
