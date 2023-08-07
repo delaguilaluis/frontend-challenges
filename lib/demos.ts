@@ -56,6 +56,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "magic-square",
         description: 'Square that rotates "in 3D" based on the mouse cursor',
       },
+      {
+        name: "Infinite Scroll",
+        slug: "infinite-scroll",
+        description: "New elements show up as the user scrolls down",
+      },
     ],
   },
 ];
