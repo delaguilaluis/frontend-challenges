@@ -18,7 +18,7 @@ export default function Page() {
   useEffect(() => {
     const options = {
       root: null,
-      threshold: [0.8],
+      threshold: [0.5],
     };
 
     const observer = new IntersectionObserver(handleIntersect, options);
