@@ -59,11 +59,11 @@ export default function Page() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
+        height: "100vh",
       }}
       maxWidth="lg"
     >
-      <Card sx={{ maxHeight: 400, minWidth: 392, maxWidth: 504 }}>
+      <Card sx={{ maxHeight: 400, minWidth: 320, maxWidth: 504 }}>
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>

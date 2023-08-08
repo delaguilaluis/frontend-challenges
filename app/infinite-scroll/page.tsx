@@ -37,12 +37,13 @@ export default function Page() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%",
+        minHeight: "100vh",
       }}
       maxWidth="lg"
+      className="pt-20 lg:pt-5"
     >
       <Typography variant="h1" textAlign="center" sx={{ fontSize: 24, mb: 3 }}>
-        Keep scrollling down...
+        Keep scrolling down...
       </Typography>
       {Array.from({ length: rectanglesQuantity }).map((_, index) => {
         return (
