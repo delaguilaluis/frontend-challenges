@@ -61,6 +61,12 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "infinite-scroll",
         description: "New elements show up as the user scrolls down",
       },
+      {
+        name: "Sidebar",
+        slug: "sidebar",
+        description:
+          "Sidebar navigation that closes with buttons or clicks outside",
+      },
     ],
   },
 ];
