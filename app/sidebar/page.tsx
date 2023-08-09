@@ -16,7 +16,7 @@ export default function Page() {
 
   const messages = ["Woah! You found me!", "Please don't run"];
   const buttonTexts = ["Hide back", "Close"];
-  const transitionSeconds = 0.3;
+  const transitionSeconds = 0.33;
 
   function handleClick(messageIndex?: number) {
     if (messageIndex !== undefined) {
@@ -70,9 +70,9 @@ export default function Page() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          width: isOpen ? 288 : 0,
+          width: 288,
           height: "100vh",
-          position: "absolute",
+          position: "fixed",
           zIndex: 2,
           top: 0,
           left: "100vw",
