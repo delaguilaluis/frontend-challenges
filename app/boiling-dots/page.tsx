@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Box,
   Button,
   Card,
   CardContent,
@@ -71,43 +72,45 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Card sx={{ maxWidth: 392, maxHeight: 400 }}>
-        <CardContent>
-          <Grid container spacing={2}>
-            <Grid item xs={7}>
-              <TextField
-                id="timer-input"
-                label="Enter boiling timer"
-                variant="standard"
-                inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  setSeconds(Number.parseInt(event.target.value, 10));
-                }}
-                value={seconds || 0}
-              />
+      <Box className="lg:ml-72">
+        <Card sx={{ maxWidth: 392, maxHeight: 400 }}>
+          <CardContent>
+            <Grid container spacing={2}>
+              <Grid item xs={7}>
+                <TextField
+                  id="timer-input"
+                  label="Enter boiling timer"
+                  variant="standard"
+                  inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setSeconds(Number.parseInt(event.target.value, 10));
+                  }}
+                  value={seconds || 0}
+                />
+              </Grid>
+              <Grid item container xs={5} alignItems="center">
+                {/* TODO: Check why it renders with bg-color white */}
+                <Button variant="contained" onClick={onClick}>
+                  Start boiling
+                </Button>
+              </Grid>
+              {dots.map((dot, index) => {
+                return (
+                  <Grid item xs={2} key={index}>
+                    <AnimatedAvatar
+                      sx={{ bgcolor: "#fd9545", fontWeight: "bold" }}
+                      isBig={dot.isBig}
+                      isPopping={dot.remaining === 0}
+                    >
+                      {dot.remaining === 0 ? "1" : dot.remaining.toString()}
+                    </AnimatedAvatar>
+                  </Grid>
+                );
+              })}
             </Grid>
-            <Grid item container xs={5} alignItems="center">
-              {/* TODO: Check why it renders with bg-color white */}
-              <Button variant="contained" onClick={onClick}>
-                Start boiling
-              </Button>
-            </Grid>
-            {dots.map((dot, index) => {
-              return (
-                <Grid item xs={2} key={index}>
-                  <AnimatedAvatar
-                    sx={{ bgcolor: "#fd9545", fontWeight: "bold" }}
-                    isBig={dot.isBig}
-                    isPopping={dot.remaining === 0}
-                  >
-                    {dot.remaining === 0 ? "1" : dot.remaining.toString()}
-                  </AnimatedAvatar>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </Box>
     </Container>
   );
 }

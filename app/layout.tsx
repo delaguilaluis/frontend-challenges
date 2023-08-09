@@ -19,11 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GlobalNav />
-        <main className="bg-blue-100">
-          <div className="max-w-4xl mx-auto px-2 lg:px-8 lg:pl-72">
-            {children}
-          </div>
-        </main>
+        <main className="bg-blue-100">{children}</main>
       </body>
     </html>
   );

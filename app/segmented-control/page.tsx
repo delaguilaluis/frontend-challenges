@@ -9,6 +9,7 @@ import {
   ToggleButtonGroup,
   SelectChangeEvent,
   Typography,
+  Box,
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
@@ -37,39 +38,41 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Typography
-        variant="h2"
-        sx={{ fontSize: 20, textAlign: "center", marginBottom: 3 }}
-      >
-        This UI changes depending on the screen size
-      </Typography>
-      {isMobile && (
-        <FormControl fullWidth>
-          <Select
+      <Box className="lg:ml-72">
+        <Typography
+          variant="h2"
+          sx={{ fontSize: 20, textAlign: "center", marginBottom: 3 }}
+        >
+          This UI changes depending on the screen size
+        </Typography>
+        {isMobile && (
+          <FormControl fullWidth>
+            <Select
+              value={selection}
+              onChange={handleSelectChange}
+              sx={{ backgroundColor: "white" }}
+            >
+              <MenuItem value="price">Sort by price</MenuItem>
+              <MenuItem value="name">Sort by name</MenuItem>
+              <MenuItem value="relevance">Sort by relevance</MenuItem>
+            </Select>
+          </FormControl>
+        )}
+        {!isMobile && (
+          <ToggleButtonGroup
+            exclusive
+            color="primary"
             value={selection}
-            onChange={handleSelectChange}
+            onChange={handleChange}
+            aria-label="Platform"
             sx={{ backgroundColor: "white" }}
           >
-            <MenuItem value="price">Sort by price</MenuItem>
-            <MenuItem value="name">Sort by name</MenuItem>
-            <MenuItem value="relevance">Sort by relevance</MenuItem>
-          </Select>
-        </FormControl>
-      )}
-      {!isMobile && (
-        <ToggleButtonGroup
-          exclusive
-          color="primary"
-          value={selection}
-          onChange={handleChange}
-          aria-label="Platform"
-          sx={{ backgroundColor: "white" }}
-        >
-          <ToggleButton value="price">Sort by price</ToggleButton>
-          <ToggleButton value="name">Sort by name</ToggleButton>
-          <ToggleButton value="relevance">Sort by relevance</ToggleButton>
-        </ToggleButtonGroup>
-      )}
+            <ToggleButton value="price">Sort by price</ToggleButton>
+            <ToggleButton value="name">Sort by name</ToggleButton>
+            <ToggleButton value="relevance">Sort by relevance</ToggleButton>
+          </ToggleButtonGroup>
+        )}
+      </Box>
     </Container>
   );
 }

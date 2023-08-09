@@ -2,6 +2,7 @@
 
 import {
   Avatar,
+  Box,
   Button,
   Card,
   CardContent,
@@ -63,92 +64,94 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Card sx={{ maxHeight: 400, minWidth: 320, maxWidth: 504 }}>
-        <CardContent>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      icon={<Avatar sx={avatarStyle}>1</Avatar>}
-                      checkedIcon={
-                        <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
-                          1
-                        </Avatar>
-                      }
-                      checked={checks[0]}
-                      onChange={() => handleChange(0)}
-                    />
-                  }
-                  label="Choose title"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      icon={<Avatar sx={avatarStyle}>2</Avatar>}
-                      checkedIcon={
-                        <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
-                          2
-                        </Avatar>
-                      }
-                      checked={checks[1]}
-                      onChange={() => handleChange(1)}
-                    />
-                  }
-                  label="Choose description"
-                />
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      icon={<Avatar sx={avatarStyle}>3</Avatar>}
-                      checkedIcon={
-                        <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
-                          3
-                        </Avatar>
-                      }
-                      checked={checks[2]}
-                      onChange={() => handleChange(2)}
-                    />
-                  }
-                  label="Choose data"
-                />
-              </FormGroup>
-            </Grid>
-            <Grid item container xs={12} sm={6} alignItems="center">
-              <Typography textAlign="center" sx={{ width: "100%" }}>
-                {descriptions[step]}
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              hidden={
-                !backButtonDescriptions[step] && !nextButtonDescriptions[step]
-              }
-            >
-              <Button
-                sx={{
-                  mr: 1,
-                  // Using hidden prop collided with inline CSS
-                  display: backButtonDescriptions[step] ? "unset" : "none",
-                }}
-                variant="contained"
-                onClick={() => handleChange(step - 1)}
+      <Box className="lg:ml-72">
+        <Card sx={{ maxHeight: 400, minWidth: 320, maxWidth: 504 }}>
+          <CardContent>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <FormGroup>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<Avatar sx={avatarStyle}>1</Avatar>}
+                        checkedIcon={
+                          <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
+                            1
+                          </Avatar>
+                        }
+                        checked={checks[0]}
+                        onChange={() => handleChange(0)}
+                      />
+                    }
+                    label="Choose title"
+                  />
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<Avatar sx={avatarStyle}>2</Avatar>}
+                        checkedIcon={
+                          <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
+                            2
+                          </Avatar>
+                        }
+                        checked={checks[1]}
+                        onChange={() => handleChange(1)}
+                      />
+                    }
+                    label="Choose description"
+                  />
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        icon={<Avatar sx={avatarStyle}>3</Avatar>}
+                        checkedIcon={
+                          <Avatar sx={{ ...avatarStyle, bgcolor: "#2f7fb7" }}>
+                            3
+                          </Avatar>
+                        }
+                        checked={checks[2]}
+                        onChange={() => handleChange(2)}
+                      />
+                    }
+                    label="Choose data"
+                  />
+                </FormGroup>
+              </Grid>
+              <Grid item container xs={12} sm={6} alignItems="center">
+                <Typography textAlign="center" sx={{ width: "100%" }}>
+                  {descriptions[step]}
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                hidden={
+                  !backButtonDescriptions[step] && !nextButtonDescriptions[step]
+                }
               >
-                {backButtonDescriptions[step]}
-              </Button>
-              <Button
-                variant="contained"
-                hidden={!nextButtonDescriptions[step]}
-                onClick={() => handleChange(step + 1)}
-              >
-                {nextButtonDescriptions[step]}
-              </Button>
+                <Button
+                  sx={{
+                    mr: 1,
+                    // Using hidden prop collided with inline CSS
+                    display: backButtonDescriptions[step] ? "unset" : "none",
+                  }}
+                  variant="contained"
+                  onClick={() => handleChange(step - 1)}
+                >
+                  {backButtonDescriptions[step]}
+                </Button>
+                <Button
+                  variant="contained"
+                  hidden={!nextButtonDescriptions[step]}
+                  onClick={() => handleChange(step + 1)}
+                >
+                  {nextButtonDescriptions[step]}
+                </Button>
+              </Grid>
             </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </Box>
     </Container>
   );
 }

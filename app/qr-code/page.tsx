@@ -27,6 +27,7 @@ export default function Page() {
           justifyContent: "center",
           alignItems: "center",
         }}
+        className="lg:ml-72"
       >
         <Card sx={{ minWidth: 275, maxWidth: 375, borderRadius: 3, mb: 2 }}>
           <CardContent>

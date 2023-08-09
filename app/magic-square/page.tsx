@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Card, Typography } from "@mui/material";
+import { Box, Container, Card, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Page() {
@@ -22,21 +22,27 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Typography variant="h1" textAlign="center" sx={{ fontSize: 24, mb: 3 }}>
-        Move the cursor over the square
-      </Typography>
-      <Card
-        sx={{
-          minWidth: width,
-          minHeight: height,
-          transform: `rotateX(${(height / 2 - y) * degreesRatio}deg)
+      <Box className="lg:ml-72">
+        <Typography
+          variant="h1"
+          textAlign="center"
+          sx={{ fontSize: 24, mb: 3 }}
+        >
+          Move the cursor over the square
+        </Typography>
+        <Card
+          sx={{
+            minWidth: width,
+            minHeight: height,
+            transform: `rotateX(${(height / 2 - y) * degreesRatio}deg)
           rotateY(${(x - width / 2) * degreesRatio}deg)`,
-        }}
-        onMouseMove={(event) => {
-          setX(event.nativeEvent.offsetX);
-          setY(event.nativeEvent.offsetY);
-        }}
-      ></Card>
+          }}
+          onMouseMove={(event) => {
+            setX(event.nativeEvent.offsetX);
+            setY(event.nativeEvent.offsetY);
+          }}
+        ></Card>
+      </Box>
     </Container>
   );
 }

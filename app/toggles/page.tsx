@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent, Container, Grid, Switch } from "@mui/material";
+import { Box, Card, CardContent, Container, Grid, Switch } from "@mui/material";
 import { useState } from "react";
 
 export default function Page() {
@@ -34,27 +34,29 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Card sx={{ maxWidth: 392, maxHeight: 400 }}>
-        <CardContent>
-          <Grid container spacing={2} direction="column">
-            <Grid item>
-              <Switch onChange={makeHandler(0)} checked={switches[0]} />
+      <Box className="lg:ml-72">
+        <Card sx={{ maxWidth: 392, maxHeight: 400 }}>
+          <CardContent>
+            <Grid container spacing={2} direction="column">
+              <Grid item>
+                <Switch onChange={makeHandler(0)} checked={switches[0]} />
+              </Grid>
+              <Grid item>
+                <Switch onChange={makeHandler(1)} checked={switches[1]} />
+              </Grid>
+              <Grid item>
+                <Switch onChange={makeHandler(2)} checked={switches[2]} />
+              </Grid>
+              <Grid item>
+                <Switch onChange={makeHandler(3)} checked={switches[3]} />
+              </Grid>
+              <Grid item>
+                <Switch onChange={makeHandler(4)} checked={switches[4]} />
+              </Grid>
             </Grid>
-            <Grid item>
-              <Switch onChange={makeHandler(1)} checked={switches[1]} />
-            </Grid>
-            <Grid item>
-              <Switch onChange={makeHandler(2)} checked={switches[2]} />
-            </Grid>
-            <Grid item>
-              <Switch onChange={makeHandler(3)} checked={switches[3]} />
-            </Grid>
-            <Grid item>
-              <Switch onChange={makeHandler(4)} checked={switches[4]} />
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </Box>
     </Container>
   );
 }

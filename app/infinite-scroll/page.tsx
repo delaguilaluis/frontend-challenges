@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Card, Typography } from "@mui/material";
+import { Box, Container, Card, Typography } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
@@ -42,22 +42,28 @@ export default function Page() {
       maxWidth="lg"
       className="pt-20 lg:pt-5"
     >
-      <Typography variant="h1" textAlign="center" sx={{ fontSize: 24, mb: 3 }}>
-        Keep scrolling down...
-      </Typography>
-      {Array.from({ length: rectanglesQuantity }).map((_, index) => {
-        return (
-          <Card
-            key={index}
-            sx={{
-              minWidth: 375,
-              minHeight: 400,
-              marginBottom: 2,
-            }}
-            ref={cardRef}
-          ></Card>
-        );
-      })}
+      <Box className="lg:ml-72">
+        <Typography
+          variant="h1"
+          textAlign="center"
+          sx={{ fontSize: 24, mb: 3 }}
+        >
+          Keep scrolling down...
+        </Typography>
+        {Array.from({ length: rectanglesQuantity }).map((_, index) => {
+          return (
+            <Card
+              key={index}
+              sx={{
+                minWidth: 375,
+                minHeight: 400,
+                marginBottom: 2,
+              }}
+              ref={cardRef}
+            ></Card>
+          );
+        })}
+      </Box>
     </Container>
   );
 }

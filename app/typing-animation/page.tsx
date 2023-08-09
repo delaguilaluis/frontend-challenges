@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 
 export default function Page() {
@@ -44,9 +44,11 @@ export default function Page() {
       }}
       maxWidth="lg"
     >
-      <Typography variant="h1" sx={{ fontWeight: "bold", fontSize: 36 }}>
-        {text}
-      </Typography>
+      <Box className="lg:ml-72 px-4">
+        <Typography variant="h1" sx={{ fontWeight: "bold", fontSize: 36 }}>
+          {text}
+        </Typography>
+      </Box>
     </Container>
   );
 }
