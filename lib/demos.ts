@@ -67,6 +67,12 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           "Sidebar navigation that closes with buttons or clicks outside",
       },
+      {
+        name: "Sticky Note",
+        slug: "sticky-note",
+        description:
+          "Whenever you scroll and element is about to get off the screen, it should stick to the top",
+      },
     ],
   },
 ];
