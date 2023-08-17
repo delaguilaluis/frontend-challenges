@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Container, SxProps } from "@mui/material";
+import { Box, Card, Container, SxProps } from "@mui/material";
 import { useState } from "react";
 
 export default function Page() {
@@ -38,9 +38,11 @@ export default function Page() {
         setPosY(e.clientY);
       }}
     >
-      <Card draggable sx={sx}>
-        Drag-and-drop me
-      </Card>
+      <Box className="lg:ml-72 my-auto">
+        <Card draggable sx={sx}>
+          Drag-and-drop me
+        </Card>
+      </Box>
     </Container>
   );
 }
