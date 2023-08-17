@@ -1,11 +1,16 @@
 "use client";
 
 import { Box, Card, Container, SxProps } from "@mui/material";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Page() {
   const [posX, setPosX] = useState(0);
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const [posY, setPosY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   const sx: SxProps = {
     paddingX: 4,
@@ -31,15 +36,34 @@ export default function Page() {
         overflow: "scroll",
         height: "100vh",
       }}
-      onDragOver={(e) => e.preventDefault()}
-      onDrop={(e) => {
+      onDragOver={(e) => {
         e.preventDefault();
-        setPosX(e.clientX);
-        setPosY(e.clientY);
+        if (isDragging) {
+          console.log(e);
+          setPosX(e.pageX - offsetX);
+          setPosY(e.pageY - offsetY);
+        }
       }}
+      onDrop={() => setIsDragging(false)}
     >
       <Box className="lg:ml-72 my-auto">
-        <Card draggable sx={sx}>
+        <Card
+          draggable
+          onDragStart={(e) => {
+            setIsDragging(true);
+            const defaultRect = {
+              top: 0,
+              left: 0,
+            };
+
+            const rect =
+              cardRef.current?.getBoundingClientRect() || defaultRect;
+            setOffsetX(e.clientX - rect.left);
+            setOffsetY(e.clientY - rect.top);
+          }}
+          sx={sx}
+          ref={cardRef}
+        >
           Drag-and-drop me
         </Card>
       </Box>
