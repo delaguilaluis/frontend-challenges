@@ -73,6 +73,11 @@ export const demos: { name: string; items: Item[] }[] = [
         description:
           "Whenever you scroll and element is about to get off the screen, it should stick to the top",
       },
+      {
+        name: "Drag and Drop",
+        slug: "drag-and-drop",
+        description: "Card that can be dragged with the cursor",
+      },
     ],
   },
 ];
