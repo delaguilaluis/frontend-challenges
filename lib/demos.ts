@@ -78,6 +78,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "drag-and-drop",
         description: "Card that can be dragged with the cursor",
       },
+      {
+        name: "Keycode",
+        slug: "keycode",
+        description: "Verification code form",
+      },
     ],
   },
 ];
