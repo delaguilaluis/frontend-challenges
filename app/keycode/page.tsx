@@ -12,7 +12,7 @@ import {
 import { ChangeEvent, FocusEvent, createRef } from "react";
 
 const inputStyle = {
-  width: 60,
+  width: 40,
   "& .MuiInputBase-input": {
     textAlign: "center",
   },
@@ -73,7 +73,7 @@ export default function Page() {
       <Box className="lg:ml-72 my-auto">
         <Card sx={{ padding: 2 }}>
           <Container>
-            <Typography align="center" sx={{ fontSize: 36, marginY: 2 }}>
+            <Typography align="center" sx={{ fontSize: 24, marginY: 2 }}>
               Enter code:
             </Typography>
           </Container>
