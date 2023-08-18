@@ -83,6 +83,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "keycode",
         description: "Verification code form",
       },
+      {
+        name: "List Builder",
+        slug: "list-builder",
+        description: "Build list of ingredients by picking them",
+      },
     ],
   },
 ];
