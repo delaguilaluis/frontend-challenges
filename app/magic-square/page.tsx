@@ -4,11 +4,14 @@ import { Box, Container, Card, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Page() {
-  const width = 300;
-  const height = 300;
-  const [x, setX] = useState(width / 2);
-  const [y, setY] = useState(height / 2);
-  const degreesRatio = 0.075;
+  const xHalf = window.innerWidth / 2;
+  const yHalf = window.innerHeight / 2;
+  const degreesRatio = 0.03;
+
+  const [x, setX] = useState(xHalf);
+  const [y, setY] = useState(yHalf);
+  const yDegrees = Math.floor((x - xHalf) * degreesRatio);
+  const xDegrees = Math.floor((y - yHalf) * degreesRatio) * -1;
 
   return (
     <Container
@@ -18,30 +21,27 @@ export default function Page() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        perspective: "1000px",
       }}
-      maxWidth="lg"
+      onMouseMove={(event) => {
+        setX(event.nativeEvent.pageX);
+        setY(event.nativeEvent.pageY);
+      }}
     >
-      <Box className="lg:ml-72">
+      <Box sx={{ width: 240, height: 240, perspective: "1000px" }}>
+        <Card
+          sx={{
+            width: "100%",
+            height: "100%",
+            transform: `rotateY(${yDegrees}deg) rotateX(${xDegrees}deg)`,
+          }}
+        ></Card>
         <Typography
           variant="h1"
           textAlign="center"
-          sx={{ fontSize: 24, mb: 3 }}
+          sx={{ fontSize: 24, mt: 3 }}
         >
-          Move the cursor over the square
+          Move the cursor around the square
         </Typography>
-        <Card
-          sx={{
-            minWidth: width,
-            minHeight: height,
-            transform: `rotateX(${(height / 2 - y) * degreesRatio}deg)
-          rotateY(${(x - width / 2) * degreesRatio}deg)`,
-          }}
-          onMouseMove={(event) => {
-            setX(event.nativeEvent.offsetX);
-            setY(event.nativeEvent.offsetY);
-          }}
-        ></Card>
       </Box>
     </Container>
   );
