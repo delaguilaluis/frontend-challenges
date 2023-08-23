@@ -1,12 +1,18 @@
 "use client";
 
 import { Box, Container, Card, Typography } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
-  const xHalf = window.innerWidth / 2;
-  const yHalf = window.innerHeight / 2;
-  const degreesRatio = 0.03;
+  const [xHalf, setXHalf] = useState(0);
+  const [yHalf, setYHalf] = useState(0);
+
+  useEffect(() => {
+    setXHalf(window.innerWidth / 2);
+    setYHalf(window.innerHeight / 2);
+  }, []);
+
+  const degreesRatio = 0.05;
 
   const [x, setX] = useState(xHalf);
   const [y, setY] = useState(yHalf);
