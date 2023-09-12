@@ -113,17 +113,15 @@ export default function Page() {
             minWidth: 2,
             padding: 3,
             borderRadius: "50%",
+            visibility: leftScroll > 0 ? "visible" : "hidden",
           }}
           onClick={() => {
-            if (leftScroll > 0) {
-              setCurrentCard((current) => current - 1);
-              setLeftScroll((current) => {
-                const valToSub =
-                  cards[currentCard - 1].minWidth +
-                  baseCardStyle.marginX * 8 * 2;
-                return current - valToSub;
-              });
-            }
+            setCurrentCard((current) => current - 1);
+            setLeftScroll((current) => {
+              const valToSub =
+                cards[currentCard - 1].minWidth + baseCardStyle.marginX * 8 * 2;
+              return current - valToSub;
+            });
           }}
         ></Button>
         <Card
@@ -147,16 +145,15 @@ export default function Page() {
             minWidth: 2,
             padding: 3,
             borderRadius: "50%",
+            visibility: leftScroll < scrollLeftMax ? "visible" : "hidden",
           }}
           onClick={() => {
-            if (leftScroll < scrollLeftMax) {
-              setCurrentCard((current) => current + 1);
-              setLeftScroll((current) => {
-                const valToAdd =
-                  cards[currentCard].minWidth + baseCardStyle.marginX * 8 * 2;
-                return current + valToAdd;
-              });
-            }
+            setCurrentCard((current) => current + 1);
+            setLeftScroll((current) => {
+              const valToAdd =
+                cards[currentCard].minWidth + baseCardStyle.marginX * 8 * 2;
+              return current + valToAdd;
+            });
           }}
         ></Button>
       </Box>
