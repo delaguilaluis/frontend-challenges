@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Card, Container, Button } from "@mui/material";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { RefObject, createRef, useEffect, useRef, useState } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Page() {
@@ -52,7 +52,7 @@ export default function Page() {
   ];
 
   cards.forEach((c) => {
-    c.ref = useRef<HTMLDivElement>(null);
+    c.ref = createRef<HTMLDivElement>();
   });
 
   const baseCardStyle = {
@@ -109,9 +109,9 @@ export default function Page() {
           sx={{
             alignSelf: "start",
             marginBottom: -20,
-            marginLeft: -2,
-            paddingY: 2,
+            marginLeft: -3,
             minWidth: 2,
+            padding: 3,
             borderRadius: "50%",
           }}
           onClick={() => {
@@ -142,10 +142,10 @@ export default function Page() {
           variant="contained"
           sx={{
             alignSelf: "end",
-            marginTop: -18,
-            marginRight: -2,
-            padding: 2,
+            marginTop: -20,
+            marginRight: -3,
             minWidth: 2,
+            padding: 3,
             borderRadius: "50%",
           }}
           onClick={() => {
