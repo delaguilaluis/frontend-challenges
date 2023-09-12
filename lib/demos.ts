@@ -88,6 +88,11 @@ export const demos: { name: string; items: Item[] }[] = [
         slug: "list-builder",
         description: "Build list of ingredients by picking them",
       },
+      {
+        name: "Carousel",
+        slug: "carousel",
+        description: "Carousel component with previous and next buttons",
+      },
     ],
   },
 ];
